@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b513f">
+  <meta name="description" content="Trang điều phối minh họa của dự án Liên Chiểu Xanh.">
+  <title>Điều phối demo · Liên Chiểu Xanh</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./app.css">
+  <script src="./admin.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Đến nội dung chính</a>
+  <header class="topbar"><div class="brand"><span class="brand-mark" aria-hidden="true">♻</span><span>LIÊN CHIỂU <strong>XANH</strong><small>Điều phối và kiểm tra</small></span></div><span class="demo-pill">TRANG QUẢN TRỊ MÔ PHỎNG</span></header>
+  <main id="main" class="admin-main">
+    <div class="page-heading"><div><p class="eyebrow">MÔ PHỎNG QUY TRÌNH NỘI BỘ</p><h1>Điều phối ghi nhận</h1><p>Phân loại việc, ghi nhận kết quả và duyệt trước khi công bố.</p></div><a class="secondary link-button" href="./index.html#reports">← Về trang người dân</a></div>
+    <div class="notice"><span aria-hidden="true">ⓘ</span><span>Đây không phải trang quản trị có đăng nhập. Ai mở đường dẫn trên cùng trình duyệt đều có thể sửa dữ liệu demo; chưa có máy chủ, phân quyền, thông báo hay kết nối cơ quan chức năng. Không dùng để xử lý tin báo thật.</span></div>
+    <div id="adminStats" class="stats" aria-live="polite"></div>
+    <div class="admin-grid">
+      <section class="panel"><div class="panel-head"><div><p class="eyebrow">TIN BÁO</p><h2>Hàng đợi xử lý</h2></div></div><div id="adminReports" class="card-list"></div></section>
+      <div class="right-stack">
+        <form id="triageForm" class="panel form-panel"><h2>1. Kiểm tra và phân luồng</h2><label for="triageId">Mã ghi nhận</label><select id="triageId" name="id" class="field" required></select><label for="triageTo">Hướng xử lý</label><select id="triageTo" name="to" class="field" required><option value="">Chọn đơn vị phù hợp</option><option value="volunteer">Tình nguyện viên theo ca · việc an toàn</option><option value="collector">Đơn vị thu gom / chuyên môn</option><option value="authority">Cơ quan có thẩm quyền / kênh chính thức</option></select><label class="check-label"><input type="checkbox" id="triageSafe"> Đã đánh giá công việc an toàn cho tình nguyện viên</label><p class="form-note">Không giao tình nguyện viên xử lý rác nguy hại, cống rãnh, sự cố hạ tầng hoặc xác minh vi phạm.</p><button class="primary" type="submit">Lưu hướng xử lý</button></form>
+        <form id="resultForm" class="panel form-panel"><h2>2. Nộp kết quả để kiểm tra</h2><label for="resultId">Mã ghi nhận</label><select id="resultId" name="id" class="field" required></select><label for="resultPhoto">Ảnh sau xử lý (nếu có)</label><input id="resultPhoto" name="photo" type="file" accept="image/*" class="field file-field"><label for="resultConfirmation">Hoặc ghi xác nhận kết quả</label><textarea id="resultConfirmation" name="confirmation" rows="3" maxlength="240" class="field" placeholder="Ai xác nhận, lúc nào, nội dung kết quả trong tình huống demo"></textarea><p class="form-note">Cần ít nhất một ảnh hoặc xác nhận. Kết quả chỉ xuất hiện trên trang người dân sau khi được duyệt.</p><button class="primary" type="submit">Gửi kiểm tra kết quả</button></form>
+        <section class="panel"><h2>Yêu cầu đồ cồng kềnh</h2><div id="adminBulky"></div></section>
+        <section class="panel"><h2>Ca tình nguyện đã đăng ký</h2><div id="adminShifts"></div></section>
+      </div>
+    </div>
+  </main>
+  <footer class="footer"><span>Liên Chiểu Xanh · Quy trình minh họa trong một trình duyệt</span><span>Thông tin vi phạm không được lưu trên trang này.</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
